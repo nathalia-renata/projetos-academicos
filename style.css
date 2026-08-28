@@ -1,0 +1,140 @@
+/* Configurações Globais */
+:root {
+    --header-main-color: #3b4d61;
+    --header-sub-color: #5c6b73;
+    --tag-bg-color: rgba(255, 255, 255, 0.65);
+    --tag-border: rgba(150, 212, 216, 0.6);
+    --tag-text-color: #2d3748;
+    --accent-color: #3b7a80;
+    --hover-bg: #ffd3d0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(-45deg, #fdf7ee, #fde2df, #e2ecf7, #fdf7ee); /*Gradiente do fundo*/
+    background-size: 400% 400%;
+    animation: gradientMove 14s ease infinite;
+    margin: 0;
+    padding: 2rem 1rem;
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+@keyframes gradientMove { /*faz o fundo se mover */
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Cabeçalho */
+header {
+    margin-bottom: 3.5rem;
+}
+
+.header-title {
+    color: var(--header-main-color);
+    font-size: 2.2rem;
+    margin: 0 0 0.8rem 0;
+    font-weight: 700;
+    margin-bottom:4.5rem;
+}
+
+.header-desc {
+    color: var(--header-sub-color);
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 650px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Grade de Cards */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    justify-content: center;
+}
+
+/* Estilo do Botão (Glassmorphism) */
+.tag {
+    background: var(--tag-bg-color);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--tag-border);
+    color: var(--tag-text-color);
+    padding: 1.1rem 1.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tag-icon {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon {
+    font-size: 0.8rem;
+    opacity: 0.35;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de Hover Interativo */
+.tag:hover {
+    background: var(--hover-bg);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-color);
+}
+
+.tag:hover .tag-icon {
+    transform: scale(1.15);
+}
+
+.tag:hover .arrow-icon {
+    opacity: 1;
+    color: var(--accent-color);
+    transform: translate(2px, -2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .header-title {
+        font-size: 1.6rem;
+    }
+
+    .header-desc {
+        font-size: 0.95rem;
+    }
+}
