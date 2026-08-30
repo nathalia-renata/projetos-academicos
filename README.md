@@ -17,7 +17,7 @@ Neste projeto, a Inteligência Artificial foi utilizada como um co-piloto de des
 
 ## 📄🖥️ Visualizar Site do Portfólio 
 
- * https://nathalia-renata/projetos-academicos
+ * https://nathalia-renata.github.io/projetos-academicos/
 
 ## 👩‍💻 Autora
 
